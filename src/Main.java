@@ -9,9 +9,12 @@ public class Main {
 
     }
 
+    /*
+    * Metodo menu donde se ingresan los datos que contendra el bst
+    * */
     public static void menu() {
         int opcion = 0;
-        do {
+       // do {
             System.out.println("Menu\n" + "1.Ingresar Datos\n" + "0.Salir");
             System.out.print("Ingrese una opción: ");
             opcion = input.nextInt();
@@ -23,9 +26,10 @@ public class Main {
                     String[] array = names.split(" ");
                     System.out.println("los Datos almacenados son" + Arrays.toString(array));
                     int n = names.length();
-                    Node root = tree.arrayToBST(names, 0, n - 1);
-                    System.out.println("Preorder traversal of constructed BST");
-                    tree.preOrder(root);
+                    Node root = tree.arrayToBST(array, 0, n - 1);
+                    System.out.println("inorder traversal of constructed BST");
+                    System.out.println("la root es : "+ root.getKey());
+                    tree.inOrder(root,array);
                     break;
 
                 case 0:
@@ -35,7 +39,7 @@ public class Main {
                     System.out.println("Opción inválida. Por favor intente de nuevo.");
             }
 
-        } while (opcion != 0);
+  //      } while (opcion != 0);
 
     }
 }
