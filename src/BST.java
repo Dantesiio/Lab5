@@ -11,18 +11,18 @@ public class BST {
         }
 
         int mid = (int)Math.floor((names.length+1)/2);
-        System.out.println(mid);
+
 
         //int mid = (start + end) / 2;
         Node node = new Node(names[mid-1]);
 
         addToTree(names, node, 0);
 
-        //node.setLeft(arrayToBST(names, start, mid - 1));
+        //root.setLeft(arrayToBST(names, start, mid - 1));
 
 
 
-        //node.setRight(arrayToBST(names, mid + 1, end));
+        //root.setRight(arrayToBST(names, mid + 1, end));
 
         return node;
     }
@@ -72,9 +72,9 @@ public class BST {
             return;
         }
 
-        inOrder(root.getRight());
+        inOrder(root.getLeft());
         System.out.print(root.getKey() + " ");
-        inOrder( root.getLeft());
+        inOrder( root.getRight());
     }
     public static int maxDepth(Node root) {
         if (root == null) {
