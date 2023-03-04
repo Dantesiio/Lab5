@@ -29,7 +29,8 @@ public class Main {
                     Node root = tree.arrayToBST(array, 0, n - 1);
                     System.out.println("inorder traversal of constructed BST");
                     System.out.println("la root es : "+ root.getKey());
-                    tree.inOrder(root,array);
+                    tree.inOrder(root);
+                    System.out.println("La maxima profundidad del arbol es: "+ tree.maxDepth(root));
                     break;
 
                 case 0:

@@ -67,14 +67,24 @@ public class BST {
     }
 
 
-    void inOrder(Node current,String[] names) {
-    /*   if (current != null){
-           inOrder(current.getRight());
-           System.out.println(current.getKey());
-           inOrder(current.getLeft());*/
-           for (int i = 0; i < names.length; i++) {
-               // Imprime cada elemento del arreglo utilizando System.out.println()
-               System.out.println(names[i]);}
-       }
+    public static void inOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        inOrder(root.getRight());
+        System.out.print(root.getKey() + " ");
+        inOrder( root.getLeft());
+    }
+    public static int maxDepth(Node root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftDepth = maxDepth(root.getLeft());
+        int rightDepth = maxDepth(root.getRight());
+
+        return 1 + Math.max(leftDepth, rightDepth);
+    }
 
 }
